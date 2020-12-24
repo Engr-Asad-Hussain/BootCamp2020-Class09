@@ -1,8 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, TextField } from '@material-ui/core/';
+import { Paper, CircularProgress } from '@material-ui/core/';
 
 import BasicTextField from './BasicTextFields';
+import AppBarProperty from './AppBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(65),
     },
     marginLeft: 800,
-    marginTop: 60,
+    marginTop: -30,
   },
 }));
 
@@ -22,10 +23,19 @@ export default function SimplePaper() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Paper elevation={5}>
-        <BasicTextField/>
-      </Paper>
+    <div>
+      <AppBarProperty />
+      <br/>
+      <CircularProgress 
+        color="secondary" 
+        disableShrink={false}
+        />
+
+      <div className={classes.root}>
+        <Paper elevation={5}>
+          <BasicTextField/>
+        </Paper>
+      </div>
     </div>
   );
 }
@@ -33,4 +43,10 @@ export default function SimplePaper() {
 /*
 Paper :::
 https://material-ui.com/components/paper/
+
+Progress Bar:::
+https://material-ui.com/components/progress/
+
+Attributes of Progress Bar:::
+https://material-ui.com/api/circular-progress/
 */
