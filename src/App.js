@@ -1,10 +1,12 @@
 import React from 'react';
-import SimplePaper from './components/SimplePaper';
+import BarChart from './components/BarChart';
+import PieChart from './components/PieChart';
 
 function App() {
   return (
     <div>
-      <SimplePaper />
+      <BarChart />
+      <PieChart />
     </div>
   );
 }
